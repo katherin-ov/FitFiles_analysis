@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="{% static 'running/bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container ">
+    {% block content %}
+    <h1>Анализ физической активности</h1>
+    <p>Загрузка файла</p>
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <p class="d-flex align-items-center justify-content-center">
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+      </p>
+    </form>
+    {% endblock %}
+  </div>
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

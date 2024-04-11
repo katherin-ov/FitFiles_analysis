@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+</head>
+<body>
+{% for result in results %}
+    <h1>Результаты анализа физической активности</h1>
+    <p>Тип тренировки: {{result.sport}}</p>
+    <p>Среднее значение пульса: {{result.avg_heart_rate}}</p>
+    <p>Дата: {{result.timestamp}}</p>
+    <p>Дистанция: {{result.distance}} </p>
+    <p>Средняя скорость: {{result.avg_speed}}</p>
+    <p>Потрачено калорий: {{result.total_calories}}</p>
+{% endfor %}
+</body>
+</html>
+
